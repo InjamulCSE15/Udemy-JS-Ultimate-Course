@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> JavaScript | HTML DOM</title>
+ 
+    <!-- This style tag using for create Animation js section -->
+    <style>
+
+      #container{
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background: yellow;
+      }
+
+      #animate{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background: red;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <!-- DOM Manipulation -->
+    <p id="methods">Hello HTML</p>
+
+    <script>
+      document.getElementById('methods').innerHTML = "HELLO WORLD";
+    </script>
+
+    <!-- Elements -->
+    <script>
+      document.write(Date());
+    </script>
+
+    <!-- HTML DOM manipulate-->
+    <p id="change">Simple Text</p>
+    <br>
+    <script>
+      document.getElementById('change').innerText = 'New text';
+    </script>
+
+    <!-- Image process with js -->
+    <img src="" alt="" id="image">
+
+    <script>
+      document.getElementById('image').src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWOiMoH5c46QM_S58LjJ8qOnqHIo_XfM5M18fTmeSSVI3lvz-2ngbm2bNPnSicAD6Fu6k&usqp=CAU";  
+    </script>
+
+
+    <!-- CSS with js-->
+    <p id="style1">Hello World</p>
+    <p id="style2">Hello World</p>
+
+    <script>
+      document.getElementById('style1').style.color = "blue";
+      document.getElementById('style1').style.fontSize = "20px";
+      document.getElementById('style1').style.fontWeight = "bold";
+      document.getElementById('style2').style.fontFamily = "roboto";
+      document.getElementById('style2').style.fontSize = "2em";
+    </script>
+
+    <!-- Animation by js -->
+    <p><button onclick="myMove()">Click Me</button></p>
+
+    <div id="container">
+      <div id="animate">
+
+      </div>
+    </div>
+
+    <script>
+      var id = null;
+      function myMove() {
+        var elem = document.getElementById('animate');
+        var pos = 0;
+        clearInterval(id);
+        id = setInterval(frame, 5);
+        function frame(){
+          if (pos == 350){
+            clearInterval(id);
+          }
+          else {
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px";
+          }
+
+        }
+      }
+
+    </script>
+
+    <!-- Events -->
+
+    <h1 onclick="this.innerHTML='Thanks for clicking on me'">Click Me</h1>
+
+
+    <!-- Event Listener -->
+
+    <button id="btn"> Click Here </button>
+
+    <p id="demo"></p>
+
+    <script>
+      document.getElementById('btn').addEventListener("click",displayDate);
+
+      function displayDate() {
+        document.getElementById('demo').innerHTML = Date();
+      }
+    </script>
+
+    <!-- Navigation & Nodes -->
+
+    <div id="div1">
+      <p id="p1">This is first paragraph.</p>
+      <p id="p2">This is second paragraph.</p>
+    </div>
+
+    <script>
+      var para = document.createElement("h2");
+      var node = document.createTextNode("This is new paragraph");
+      para.appendChild(node);
+      var element = document.getElementById('div1');
+      element.appendChild(para);
+    </script>
+
+    <!-- Collections -->
+    <!-- Only speech in the course nothing to show with an example -->
+
+    <!-- Node Lists-->
+    <!-- Only speech in the course nothing show with an example -->
+
+  <!-- Start JavaScript Here -->
+  <script type="text/javascript" src="htmldom.js">
+
+  </script>
+  </body>
+</html>

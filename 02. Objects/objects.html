@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> JavaScript | Objects</title>
+  </head>
+  <body>
+
+  <!--About Object methods-->  
+  <p id="methods"></p>
+  
+  <script>
+    // Create an object: 
+    var mySelf= {
+      firstName :"Injamul Alam",
+      lastName : "Ismam",
+      id: 01506404,
+      fullName : function() {
+        return this.firstName + " " + this.lastName;
+      }
+    }
+    // Display data from the object
+    document.getElementById("methods").innerHTML=mySelf.fullName();
+    console.log(mySelf); // for testing 
+  </script>
+
+
+  <!-- Start JavaScript Here -->
+  <script type="text/javascript" src="objects.js">
+
+  </script>
+  </body>
+</html>

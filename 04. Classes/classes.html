@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> JavaScript | Classes</title>
+  </head>
+  <body>
+
+<p id="class"></p>
+
+<script>
+  class studentInfo {
+    constructor (name, year) {
+      this.name = name;
+      this.year = year;
+    }
+    age() {
+      let date = new Date();
+      return date.getFullYear() - this.year;
+    }
+  }
+
+  let firstStudent = new studentInfo("Md. Abdur Rahim", 1998);
+  document.getElementById('class').innerHTML= "Student info is Name: " + firstStudent.name +" Age: " +firstStudent.age();
+
+</script>
+
+<!--class Inheritance-->
+<p id="inheritance"></p>
+
+<script>
+  class Car {
+    constructor (brand) {
+      this.carName = brand;
+    }
+    present() {
+      return 'I have a ' + this.carName;
+    }
+  }
+
+  class Model extends Car {
+    constructor (brand, mod){
+      super(brand);
+      this.model = mod;
+    }
+    show(){
+      return (this.present() + ', it is a ' + this.model);
+    }
+  }
+
+  let myCar = new Model("Ford", "Mustang");
+  document.getElementById("inheritance").innerHTML = myCar.show();
+</script>
+
+<!-- static class-->
+
+
+  <!-- Start JavaScript Here -->
+  <script type="text/javascript" src="classes.js">
+
+  </script>
+  </body>
+</html>
