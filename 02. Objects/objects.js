@@ -12,5 +12,5 @@ console.log("hello world")
     }
   }
   // Display on browser data from the object: 
-  document.getElementById("methods").innerHTML=mySelf.fullName();
+  // document.getElementById("methods").innerHTML=mySelf.fullName();
   console.log(mySelf); // for testing 
