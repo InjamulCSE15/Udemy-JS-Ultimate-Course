@@ -6,12 +6,14 @@
   </head>
   <body>
 
-  <!-- AJAX change Text -->
+  <!-- 01. AJAX change Text -->
 
   <div id="ajax">
     <h2>AJAX change this text</h2>
     <button type="button" onClick="loadDoc()"> Click To Change Content</button>
   </div>
+
+  <br>
 
   <script>
     function loadDoc() {
@@ -27,6 +29,95 @@
 }
   </script>
 
+  <!-- 02. XML http:
+      => XMLHttpRequest()
+       
+           The XMLHttpRequest object can be used to request data from a web server.
+           The XMLHttpRequest object is a developers dream, because you can:
+            i.  Update a web page without reloading the page
+            ii. Request data from a server - after the page has loaded
+            iii.Receive data from a server  - after the page has loaded
+            iv. Send data to a server - in the background 
+  
+      03. Request:
+
+      The XMLHttpRequest object is used to exchange data with a server.
+      To send a request to a server, we use the open() and send() methods of the XMLHttpRequest object:
+      xhttp.open("GET", "ajax_info.txt", true);
+      xhttp.send();
+
+      EXAMPLE: 
+      1. GET Requests
+        xhttp.open("GET", "demo_get.asp", true);
+        xhttp.send();
+      2. POST Requests
+        xhttp.open("POST", "demo_get.asp", true);
+        xhttp.send();
+
+      ** "GET" is used for viewing something, without changing it, while "POST" is used for changing something. 
+        For example, a search page should use "GET" to get data while a form that changes your password should use "POST". 
+        Essentially "GET" is used to retrieve remote data, and "POST" is used to insert/update remote data.
+  
+     04. Response: 
+      The Response interface of the Fetch API represents the response to a request.
+  
+     05. XML File:
+      
+      XML is a software- and hardware-independent tool for storing and transporting data.
+        XML and HTML were designed with different goals:
+        => XML was designed to carry data - with focus on what data is
+        => HTML was designed to display data - with focus on how data looks
+        => XML tags are not predefined like HTML tags are      
+    
+     06. PHP & how it's interacts with AJAX: 
+    
+      The following example will demonstrate how a web page can communicate with a web server while a user type characters in an input field:
+      If you check of the input field is empty string length, that length equals to zero if it is clear the content of the text and placeholder
+      and exit the function.
+      However, the input field is not empty to the following and create an XMLHttpRequest create function to be executed when the server response is ready, send the request after PHP file notice the q parameter is added. And then the string variable holds the content of the input field.
+
+    07. AJAX with ASP: 
+    
+      AJAX is used to create more interactive applications and it work with ASP. Again, it's similar to the PHP version where it's going to connect with and do the following here, create an XMLHttpRequest object, create the function to be executed  when the server response is ready, send the request off to ASP file on the server knows the q parameters added get hint at ASP and then the string variables holds the content of the input field.
+      
+    08. Database: 
+
+      You can work with database's an example, this would be the show customer function, which does the following the checks of a customer selected creates an XMLHttpRequest object, creates the function to be executed.
+      When the server response is ready, send the request off to a file on the server. Notice the parameter added to the URL. The AJAX server page, the page on the server called by JavaScript above in the PHP file called GET customer.php.
+
+    09. XML Applications: 
+    -->  
+    <button type="button" onClick="loadXMLDoc()"> Click Here </button>
+    <br>
+    <table id = "demo"></table>
+
+    <script>
+      function loadXMLDoc() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+
+          if(this.readyState == 4 && this.status == 200) {
+            myFunction(this);
+          }
+        };
+        xmlhttp.open("GET", "cd_catalog.xml", true);
+        xmlhttp.send();
+      }
+
+      function myFunction (xml) {
+          var i;
+          var xmlDoc = xml.responseXML;
+          var table = "<tr><th>Artist</th><th>Title</th><tr>";
+          var x = xmlDoc.getElementsByTagName("CD");
+          for (i = 0; i < x.length; i++)
+          {
+            table += "<tr><td>" +
+            x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +  "</td><td>" + 
+            x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +  "</td><tr>"; 
+          }
+            document.getElementById("demo").innerHTML = table;
+      }
+    </script>
 
   <!-- Start JavaScript Here -->
   <script type="text/javascript" src="ajax.js">
