@@ -39,6 +39,7 @@ document.getElementById('sample').innerHTML = x;
     XML is much more difficult to parse than JSON.
     JSON is parsed into a ready-to-use JavaScript object.
 
+    =======================================================================
 
     # DATA TYPES: 
     
@@ -63,6 +64,26 @@ document.getElementById('sample').innerHTML = x;
 
     06. Null
     {"grade" : null}
+
+    ========================================================================================
+
+    # Parse:
+    Parse the data with JSON.parse() and the data becomes a JavaScript Object.
+
+    =========================================================================================
+
+    # Stringify:
+    To convert an object into a string use JSON.stringify()
+
+    =========================================================================================
+
+    # Objects:
+    JSON Objects are surrounded by curly brackets {} which is written in key/value pairs and key must be strings, and values must be a valid JSON data type(string, number, array, object, boolean or null). Keys and values are separated by a colon ';' and each key or value pair is separated by a comma ','.
+
+    =========================================================================================
+
+    # Arrays:
+    Arrays in JSON are almost the same as arrays in JavaScript. In JSON array values must be type of string, number, object, array, boolean or null. In Javascript array values can be all of the about 
 
 
 
