@@ -86,5 +86,15 @@ document.getElementById('sample').innerHTML = x;
     Arrays in JSON are almost the same as arrays in JavaScript. In JSON array values must be type of string, number, object, array, boolean or null. In Javascript array values can be all of the above plus any other valid JavaScript expression, including functions, dates, and undefined.
 
 
+    =========================================================================================
+
+    ** PHP **
+    Arrays in PHP will be convert into JSON when using the PHP Function json_encode()
+
+    ==========================================================================================
+
+    ** JSONP **
+    JSONP is a method for send JSON data without worrying about cross-domain issues.
+
 
 */
