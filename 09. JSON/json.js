@@ -95,6 +95,6 @@ document.getElementById('sample').innerHTML = x;
 
     ** JSONP **
     JSONP is a method for send JSON data without worrying about cross-domain issues.
-
+    
 
 */
